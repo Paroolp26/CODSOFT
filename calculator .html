@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      background-color: #f1f1f1;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .calculator {
+      background: #222;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      width: 300px;
+    }
+    .display {
+      background: #000;
+      color: #0f0;
+      font-size: 2rem;
+      text-align: right;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      overflow-x: auto;
+    }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    button {
+      padding: 20px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #333;
+      color: white;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    button:hover {
+      background-color: #555;
+    }
+    button.zero {
+      grid-column: span 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="buttons">
+      <button data-action="clear">C</button>
+      <button data-action="backspace">←</button>
+      <button data-action="/">÷</button>
+      <button data-action="*">×</button>
+
+      <button data-action="7">7</button>
+      <button data-action="8">8</button>
+      <button data-action="9">9</button>
+      <button data-action="-">−</button>
+
+      <button data-action="4">4</button>
+      <button data-action="5">5</button>
+      <button data-action="6">6</button>
+      <button data-action="+">+</button>
+
+      <button data-action="1">1</button>
+      <button data-action="2">2</button>
+      <button data-action="3">3</button>
+      <button data-action="=">=</button>
+
+      <button class="zero" data-action="0">0</button>
+      <button data-action=".">.</button>
+    </div>
+  </div>
+
+  <script>
+    const display = document.getElementById("display");
+    const buttons = document.querySelectorAll("button");
+
+    let currentInput = "";
+    let resultShown = false;
+
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        const action = button.getAttribute("data-action");
+
+        if (!isNaN(action) || action === ".") {
+          if (resultShown) {
+            currentInput = "";
+            resultShown = false;
+          }
+          currentInput += action;
+          display.textContent = currentInput;
+        } else if (["+", "-", "*", "/"].includes(action)) {
+          if (currentInput !== "" && !resultShown) {
+            currentInput += ` ${action} `;
+            display.textContent = currentInput;
+          }
+        } else if (action === "=") {
+          try {
+            const evaluated = eval(currentInput);
+            display.textContent = evaluated;
+            currentInput = evaluated.toString();
+            resultShown = true;
+          } catch {
+            display.textContent = "Error";
+            currentInput = "";
+            resultShown = false;
+          }
+        } else if (action === "clear") {
+          currentInput = "";
+          display.textContent = "0";
+          resultShown = false;
+        } else if (action === "backspace") {
+          if (!resultShown) {
+            currentInput = currentInput.trim().slice(0, -1);
+            display.textContent = currentInput || "0";
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
