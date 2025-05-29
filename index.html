@@ -3,183 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Parool's Landing Page</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      line-height: 1.6;
-    }
-
-    /* Top Contact Bar */
-    .top-bar {
-      background-color: #1c1c1c;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    .top-bar span {
-      margin: 0 10px;
-    }
-
-    /* Banner Section */
-    .banner {
-      background-color: #0066d9;
-      color: white;
-      text-align: center;
-      padding: 80px 20px;
-    }
-
-    .banner h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-    }
-
-    .banner p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-    }
-
-    .btn {
-      padding: 12px 24px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 4px;
-      margin: 10px;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background-color: white;
-      color: #0066d9;
-    }
-
-    .btn-secondary {
-      background-color: orange;
-      color: white;
-    }
-
-    /* About Me Section */
-    .about {
-      background-color: #ffffff;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .about h2 {
-      margin-bottom: 20px;
-      font-size: 2rem;
-    }
-
-    .about p {
-      font-size: 1.1rem;
-      color: #333;
-    }
-
-    /* Services Section */
-    .services {
-      background: #f8f9fa;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .services h2 {
-      margin-bottom: 10px;
-      font-size: 2rem;
-    }
-
-    .services p {
-      color: gray;
-      margin-bottom: 40px;
-    }
-
-    .service-container {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
-
-    .service-item {
-      width: 250px;
-    }
-
-    .service-item img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .service-item p {
-      margin-top: 10px;
-      font-weight: bold;
-    }
-
-    /* Footer */
-    footer {
-      background: #333;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-    }
-  </style>
+  <title>Parool Priya | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Top Contact Bar -->
-  <div class="top-bar">
-    <span>📞 +91 9876543210</span> |
-    <span>📧 parool@example.com</span>
-  </div>
+  <!-- Header Section -->
+  <header>
+    <h1>Parool Priya</h1>
+    <p>BCA student, aspiring assistant professor, and passionate web developer</p>
+  </header>
 
-  <!-- Banner -->
-  <section class="banner">
-    <h1>We Are Creative</h1>
-    <p>Welcome to Parool's portfolio landing page!</p>
-    <button class="btn btn-primary">Read More</button>
-    <button class="btn btn-secondary">Request a Consult</button>
-  </section>
-
-  <!-- About Me -->
-  <section class="about">
+  <!-- About Section -->
+  <section id="about">
     <h2>About Me</h2>
-    <p>I’m Parool, a passionate web development intern focused on learning frontend technologies and building beautiful websites.</p>
+    <img src="profile.jpg.jpg"Parool Priya" class="profile-img" />
+    <p>
+      I'm currently pursuing my BCA and have a strong interest in web development, programming, and academic research. 
+      My goal is to become an assistant professor and pursue a PhD in computer science. 
+      I'm committed to continuous learning and have worked on personal and academic projects that strengthened my skills 
+      in HTML, CSS, and more. I'm also preparing for competitive exams like NIMCET and UGC-NET to further my academic journey.
+    </p>
   </section>
 
-  <!-- Services -->
-  <section class="services">
-    <h2>Our Services</h2>
-    <p>What we offer to our clients</p>
-    <div class="service-container">
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript (Basic)</li>
+      <li>Python</li>
+      <li>C/C++</li>
+      <li>Git & GitHub</li>
+      <li>Research Writing</li>
+    </ul>
+  </section>
 
-      <div class="service-item">
-        <img src="https://via.placeholder.com/250x150" alt="User Experience">
-        <p>User Experience</p>
-      </div>
-
-      <div class="service-item">
-        <img src="https://via.placeholder.com/250x150" alt="Creative Design">
-        <p>Creative Design</p>
-      </div>
-
-      <div class="service-item">
-        <img src="https://via.placeholder.com/250x150" alt="Retina Ready">
-        <p>Retina Ready</p>
-      </div>
-
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Landing Page</h3>
+      <p>A visually appealing and responsive landing page created using HTML and CSS.</p>
     </div>
+    <div class="project">
+      <h3>Result Calculator</h3>
+      <p>A web-based tool to calculate and display academic results dynamically.</p>
+    </div>
+    <div class="project">
+      <h3>Research Paper</h3>
+      <p>An academic research paper demonstrating skills in analysis and technical writing.</p>
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume">
+    <h2>Resume</h2>
+    <p><a href="Parool_Priya_Resume.pdf.pdf" download>📄 Download My Resume (PDF)</a></p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:paroolpriya@example.com">paroolpriya@example.com</a></p>
+    <p>Phone: +91 98765 43210</p>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Parool. All rights reserved.</p>
+    <p>&copy; 2025 Parool Priya. All rights reserved.</p>
   </footer>
 
 </body>
 </html>
+
